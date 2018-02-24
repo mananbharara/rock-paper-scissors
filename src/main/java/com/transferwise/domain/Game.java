@@ -9,12 +9,12 @@ import java.util.List;
 import static com.transferwise.constants.RoundResult.LOSS;
 import static com.transferwise.constants.RoundResult.WIN;
 
-public class GameScore {
+public class Game {
   public static final int GAMES_TO_WIN = 3;
 
   private List<RoundResult> roundResults;
 
-  public GameScore() {
+  public Game() {
     this.roundResults = new ArrayList<>();
   }
 
@@ -22,7 +22,7 @@ public class GameScore {
     return roundResults;
   }
 
-  public GameScore addRoundResult(RoundResult roundResult) {
+  public Game addRoundResult(RoundResult roundResult) {
     roundResults.add(roundResult);
 
     return this;
@@ -41,13 +41,18 @@ public class GameScore {
   }
 
   public GameResult result() {
-    if(playerScore() == GAMES_TO_WIN) {
+    if (playerScore() == GAMES_TO_WIN) {
       return GameResult.WIN;
     }
-    if(computerScore() == GAMES_TO_WIN) {
+    if (computerScore() == GAMES_TO_WIN) {
       return GameResult.LOSS;
     }
 
     return GameResult.UNDECIDED;
+  }
+
+  public Game reset() {
+    this.roundResults = new ArrayList<>();
+    return this;
   }
 }
