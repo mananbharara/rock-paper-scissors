@@ -2,9 +2,10 @@ To run:
 
 - mvn spring-boot:run
 
-Assumptions
+Notes
 
 - Only one game is playable at a time
+- Java 8 is available
 
 Routes
 
