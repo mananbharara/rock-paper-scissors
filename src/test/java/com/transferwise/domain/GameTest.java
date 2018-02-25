@@ -39,7 +39,7 @@ public class GameTest {
     game.addRoundResult(LOSS);
     game.addRoundResult(WIN);
 
-    assertThat(game.getRoundResults(), is(asList(LOSS, LOSS, LOSS)));
+    assertThat(game.getRoundResults(), is(asList(LOSS, LOSS, WIN)));
   }
 
   @Test

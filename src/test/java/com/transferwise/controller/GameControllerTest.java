@@ -40,7 +40,7 @@ public class GameControllerTest {
     ResponseEntity<Map<String, Object>> responseEntity = gameController.createGame();
 
     assertThat(responseEntity.getStatusCode(), is(HttpStatus.CREATED));
-    assertThat(responseEntity.getBody().get("gameResult"), is(GameResult.UNDECIDED.name()));
+    assertThat(responseEntity.getBody().get("gameResult"), is(GameResult.UNDECIDED));
   }
 
   @Test
@@ -52,7 +52,7 @@ public class GameControllerTest {
     ResponseEntity<Map<String, Object>> responseEntity = gameController.getCurrentGame();
 
     assertThat(responseEntity.getStatusCode(), is(HttpStatus.OK));
-    assertThat(responseEntity.getBody().get("gameResult"), is(GameResult.WIN.name()));
+    assertThat(responseEntity.getBody().get("gameResult"), is(GameResult.WIN));
   }
 
   @Test
