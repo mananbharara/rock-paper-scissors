@@ -3,7 +3,7 @@ package com.transferwise.service;
 import com.transferwise.constants.GameResult;
 import com.transferwise.constants.Move;
 import com.transferwise.constants.RoundResult;
-import com.transferwise.domain.ComputerPlayer;
+import com.transferwise.component.ComputerPlayer;
 import com.transferwise.domain.Game;
 import com.transferwise.domain.Round;
 import org.springframework.beans.factory.annotation.Autowired;

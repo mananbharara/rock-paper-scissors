@@ -1,4 +1,4 @@
-package com.transferwise.domain;
+package com.transferwise.component;
 
 import com.transferwise.constants.Move;
 import org.springframework.stereotype.Component;

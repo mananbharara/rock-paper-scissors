@@ -1,7 +1,7 @@
 package com.transferwise.service;
 
 import com.transferwise.constants.GameResult;
-import com.transferwise.domain.ComputerPlayer;
+import com.transferwise.component.ComputerPlayer;
 import com.transferwise.domain.Game;
 import org.junit.Test;
 

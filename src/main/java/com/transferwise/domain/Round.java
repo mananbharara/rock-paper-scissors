@@ -1,5 +1,6 @@
 package com.transferwise.domain;
 
+import com.transferwise.component.ComputerPlayer;
 import com.transferwise.constants.Move;
 import com.transferwise.constants.RoundResult;
 
