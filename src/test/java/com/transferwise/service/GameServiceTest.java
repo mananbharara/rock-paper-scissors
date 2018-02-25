@@ -32,6 +32,25 @@ public class GameServiceTest {
     assertThat(score.result(), is(GameResult.WIN));
   }
 
+  @Test(expected = IllegalStateException.class)
+  public void shouldThrowErrorIfGameFinished() {
+    ComputerPlayer cPlayer = mock(ComputerPlayer.class);
+    when(cPlayer.move())
+      .thenReturn(SCISSOR)
+      .thenReturn(ROCK)
+      .thenReturn(SCISSOR)
+      .thenReturn(PAPER);
+
+    GameService gameService = new GameService(cPlayer);
+
+    gameService.playNewRound(PAPER);
+    gameService.playNewRound(PAPER);
+    gameService.playNewRound(ROCK);
+    gameService.playNewRound(SCISSOR);
+
+    gameService.playNewRound(ROCK);
+  }
+
   @Test
   public void shouldGetCurrentGame() {
     ComputerPlayer cPlayer = mock(ComputerPlayer.class);

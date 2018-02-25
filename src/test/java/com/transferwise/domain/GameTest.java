@@ -3,10 +3,13 @@ package com.transferwise.domain;
 import com.transferwise.constants.GameResult;
 import org.junit.Test;
 
+import java.util.Optional;
+
 import static com.transferwise.constants.RoundResult.LOSS;
 import static com.transferwise.constants.RoundResult.WIN;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.*;
 
 public class GameTest {
@@ -18,7 +21,14 @@ public class GameTest {
     game.getRoundResults().add(LOSS);
     game.getRoundResults().add(WIN);
 
-    assertThat(game.lastRoundResult(), is(WIN));
+    assertThat(game.lastRoundResult().get(), is(WIN));
+  }
+
+  @Test
+  public void shouldReturnNullIfNoRoundsPlayed() {
+    Game game = new Game();
+
+    assertThat(game.lastRoundResult(), is(Optional.empty()));
   }
 
   @Test

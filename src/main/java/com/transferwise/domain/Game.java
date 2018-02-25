@@ -5,6 +5,7 @@ import com.transferwise.constants.RoundResult;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static com.transferwise.constants.RoundResult.LOSS;
 import static com.transferwise.constants.RoundResult.WIN;
@@ -28,8 +29,12 @@ public class Game {
     return this;
   }
 
-  public RoundResult lastRoundResult() {
-    return roundResults.get(roundResults.size() - 1);
+  public Optional<RoundResult> lastRoundResult() {
+    if (roundResults.isEmpty()) {
+      return Optional.empty();
+    }
+
+    return Optional.of(roundResults.get(roundResults.size() - 1));
   }
 
   public long playerScore() {
