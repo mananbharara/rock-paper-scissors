@@ -10,7 +10,7 @@ Notes
 Routes
 
 - POST /games/new
-Creates a new game in memory. Resets the Game object to have empty values for player scores and rest of the shit.
+Creates a new game in memory. Resets the Game object.
 Returns:
 
 StatusCode: 201
