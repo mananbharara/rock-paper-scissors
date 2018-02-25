@@ -40,6 +40,7 @@ Returns:
 POST /games/current-game/moves/new
 StatusCode: 201
 Request Body:
+Content-Type: application/json
 ```json
 {
 	"playerMove": "ROCK"
