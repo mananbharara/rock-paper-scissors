@@ -62,7 +62,7 @@ public class GameControllerTest {
     when(updatedCurrentGame.result()).thenReturn(GameResult.LOSS);
     when(gameService.playNewRound(Move.PAPER)).thenReturn(updatedCurrentGame);
 
-    Map<String, String> playerMove = new HashMap<>() {{
+    Map<String, String> playerMove = new HashMap<String, String>() {{
       put("playerMove", Move.PAPER.name());
     }};
 
@@ -78,7 +78,7 @@ public class GameControllerTest {
     String errorMsg = "error";
     IllegalStateException error = new IllegalStateException(errorMsg);
 
-    Map<String, String> playerMove = new HashMap<>() {{
+    Map<String, String> playerMove = new HashMap<String, String>() {{
       put("playerMove", Move.PAPER.name());
     }};
 
@@ -92,7 +92,7 @@ public class GameControllerTest {
 
   @Test
   public void shouldReturnErrorIfInvalidMove() {
-    Map<String, String> playerMove = new HashMap<>() {{
+    Map<String, String> playerMove = new HashMap<String, String>() {{
       put("playerMove", "LAVA");
     }};
 

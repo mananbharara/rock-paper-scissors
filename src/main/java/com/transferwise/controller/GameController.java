@@ -59,7 +59,7 @@ public class GameController {
   }
 
   private ResponseEntity<Map<String, Object>> getErrorResponse(final String errorMessage) {
-    Map<String, Object> errorBody = new HashMap<>() {{
+    Map<String, Object> errorBody = new HashMap<String, Object>() {{
       put("error", errorMessage);
     }};
 
